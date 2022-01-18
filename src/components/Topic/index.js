@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Topic() {
+export default function Topic({ title }) {
     return (
-        <div>
-            <p>Topic</p>
+        <div className="topic">
+            <p>{title}</p>
         </div>
     )
 }
