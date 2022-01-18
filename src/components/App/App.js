@@ -11,11 +11,9 @@ function App() {
     <div className="App">
       <Header></Header>
 
-
-
       <Routes>
         <Route path="/" element={<TopicPage />} />
-        <Route path="/questions" element={<QuestionsPage />} />
+        <Route path="/questions/:query" element={<QuestionsPage />} />
       </Routes>
     </div>
   );
