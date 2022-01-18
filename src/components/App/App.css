@@ -9,6 +9,7 @@
   max-width: 1100px;
   margin: 0 auto;
   justify-content: center;
+  gap: 25px;
 }
 
 .topic {
@@ -20,5 +21,6 @@
   color: rgb(0, 0, 0);
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 

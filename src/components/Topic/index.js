@@ -4,17 +4,13 @@ import { useNavigate } from "react-router-dom";
 export default function Topic({ title, imgPath, query }) {
 
     let navigate = useNavigate();
-    // function handleClick(query) {
-    //     navigate("");
-    // }
-
     const handleClick = useCallback(
       (query) => navigate(`../questions/${query}`),
       [navigate])
 
   return (
     <div>
-      <p>{title}</p>
+      <h3>{title}</h3>
       <div onClick={() =>{handleClick(query)}}
         className="topic"
         style={{
@@ -22,6 +18,7 @@ export default function Topic({ title, imgPath, query }) {
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          border: "none",
         }}
       ></div>
     </div>
