@@ -1,0 +1,168 @@
+Topic,Question,Correct_answer,Incorrect_answer
+frontend,"Which of the following would be a good, reusable class name for a warning alert in your CSS?",.warning-alert,".red-alert, .a, .red alert"
+frontend,How does specificity work in CSS?,It adds points based on selectors you have used and decides the order of precedence when more than one selector is applied to an element,"It adds all selectors and divides by 100, Specificity doesn't exist in CSS, It allows you to use JavaScript to target and change specific CSS attributes"
+frontend,What is the lighthouse audit tool used for ?,"To audit an webpage and have data that will enable you to make improvements by highlighting accessibility, performance, etc.","Powerful flashing lamp that is built to warn mariners of dangerous shallows and perilous rocky coasts,  Lighting up areas of your code where you can improve your syntax"
+frontend,What does BEM stand for in CSS?,Block Element Modifier,"Block Event Module, Body Exercise Mass"
+frontend,How do you declare a CSS variable for colour blue?,--blue: #1e90ff;,"blue: #1e90ff; , -blue: #1e90ff; , blue-:#1e90ff;"
+frontend,How would you create a CSS variable with global scope ?,Declare the CSS variables within the :root selector,"Declare the CSS variable within a class, Use any CSS selector"
+frontend,When would you use flexbox ?,To align content or items along 1 dimension i.e horizontally or vertically,"Align content both horizontally and vertically, To be cool and appreciated in the dev community"
+frontend,What is a callback function?,"A function passed as an argument to another function, so that it can be called later","Something never to be trifled with, A way of keeping track of variables, A function you define with a fat arrow"
+frontend,What type of scoping describes const and let?,Block scope,"Function scope, Globally scope, Peri scope"
+frontend,What type of scoping describes var?,Function scope,"Block scope, Globally scope, Peri scope"
+frontend,When is it useful to use an array to represent something?,When you have a bunch of properties,"When you can't think of anything else, When you have a large piece of text, When you have a collection of things, and the order matters"
+frontend,What does the fetch function return?,A promise,"A ball you threw, An object, An array"
+frontend,What does querySelector use to select things from the DOM?,A valid css selector,"A set of keys, An object, Only IDs"
+frontend,"We have selected a button, and pointed to it with a variable called button. How do we add a listener so that when the button is clicked, we run the doSomething function?","button.addEventListener(""onClick"", doSomething());","button.addEventListener(""click"", doSomething());, button.addEventListener(""click"", doSomething);, button.addEventListener(""onClick"", doSomething);"
+frontend,How would you describe the relationship between async/await?,"To use await, you need to be inside an async function","When using async, you can add await to make sure it happens, When using await, you can concatenate async to make sure it happens, Inside an await function, you always use async"
+frontend,When thinking about semantic HTML:,"Look up if there's a tag which serves the purpose you are looking for, and if there is use that","Memorise all HTML tags and use them all, Use divs for everything, Don't use tags"
+frontend,What is the difference between let and const?,"You cannot reassign a const, you can reassign a let","Const is the name of Chris' pet goldfish,You cannot assign a let, but you can assign a const, You cannot reassign either, but you can change a let to a const"
+backend,What is REST?,A Javascript framework for writing APIs,"A programming language,
+An architectural standard informing how APIs are structured,
+What you should do at least for 5 minutes every hour,
+An architectural standard informing how APIs are structured,"
+backend,Which of these is NOT an HTTP method?,SAVE,"PUT,
+GET,
+DELETE,"
+backend,What's the difference between a PUT and a PATCH request,PUT should replace the whole item; PATCH should replace a bit of it.,"PUT should put the item in the database; PATCH should patch it in.
+PATCH should remove the item; PUT should put a new one in.
+PATCH should replace the whole item; PUT should replace a bit of it."
+backend,Which of these is the correct syntax for a simple get route in an express app with an id param?,"app.get('/user/:id', function(req, res) { res.send('hello world') })","
+app.get('/user/:id', function(req, res) { req.send('hello world') })
+app.get('/user/&id', function(res, req) { res.send('hello world') })
+app('/user/:id', function(req, res) { req.send('hello world') })"
+backend,"How do you get the body of a POST, PUT, or PATCH request?",req.body,"res.body
+req.query
+req.params.body"
+backend,What does REST stand for?,Representational State Transfer,"Rapid Status Tester
+Reticulated Snake Tamer
+Random Sandwich Taster
+Ridiculed Sloth Toenails"
+backend,"What HTTP status codes would we consider a ""good"" response that show our request was successful?",200s,"100s
+200s
+300s
+400s"
+backend,What's the difference between installing a Node package with a --save-dev flag and just installing as normal?,"You can use it while you develop your application as a dev dependency, but it won't be there in production.","You can change the contents of the Node package before you require it.
+It ensures you're installing the latest version.
+It saves the Node package along with installing it."
+backend,What do req and res stand for in our Express handlers?,Request and response,"Requirements and response
+Request and result
+Require and result
+
+"
+backend,What is the purpose of middleware?,It lets you run code before the requests received by the server hit an endpoint.,"It protects the server by screening out requests without the content-type header of ""application/json"".
+It is specifically to handle requests you haven't got an endpoint for.
+It runs code exactly halfway through any of the functions you write in the file.
+"
+testing,Which of the following describes TDD?,Is an Agile software development methodology in which an application is documented and designed around the behavior a user expects to experience when interacting with it.,"Is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time and, when releasing the software, without doing so manually
+Is a software development practice that focuses on creating unit test cases before developing the actual code
+Is a principle aimed at reducing repetition of software patterns, replacing it with abstractions or using data normalization to avoid redundancy"
+testing,Which of the following is a common TDD approach?,"Red, Green, Refactor","Red, Amber, Green
+Ready, steady go
+Pass, Fail, Refactor"
+testing,Why do you need to use .toEqual instead of .toBe with objects and arrays? *,".toBe checks exact equality, while .toEqual checks if each field of an object or array is the same.",".toBe doesn't check equality.
+Convention; they both do the same thing.
+.toEqual tests if any errors are thrown when the function is called."
+testing,What is unit testing? *,When you test a function or method in isolation in code to ensure it's giving the desired outcome.,"Making sure everyone in your immediate team (your ""unit"") knows how your code is being tested.
+The regular tests completed during the retrospective after an agile sprint.
+If a test is testing too much code, we describe it as an ""absolute unit"""
+testing,What is integration testing? *,Testing individual units of a program combined as a group,"Testing the whole user journey of an application
+Testing whether the front end of an application can talk to a server
+Testing whether the people in your tech team can get along with each other"
+testing,Which of the following types of tests are usually the cheapest and most efficient to run? *,Unit tests,"Integration tests
+Acceptance tests
+UI tests"
+testing,How do you tell Jest that your file contains tests it needs to run? *,Ending your file in .test.js,"Importing Jest at the top of your file
+Calling const test = new Jest() before your test statements
+It just knows by magic!"
+react advanced ,Which of these describes a finite state machine? *,"A system where only particular, specified inputs cause only particular, specified changes in state.","A system where any input causes only particular, specified changes in state.
+A system where any inputs cause any changes in state.
+A system where only particular, specified inputs cause any changes in state."
+react advanced,"In the reduce method's callback function, what is the role of the accumulator? *",Holds the previously returned value of the callback function after each iteration and is ultimately returned from .reduce after it's finished iterating through the array,"Holds the initial value
+Is undefined until .reduce is finished iterating through the array
+Holds the current value of the array as the function iterates over each item"
+react advanced,"Fill in the blank: In order to specify the conditions when a useEffect should be triggered, you need to add a ______ array as the second argument. *",dependency,"callback
+state
+behavior
+cleanup"
+react advanced,"Fill in the blank to add a test id of ""submit-button"" to this JSX button component: <button ____=""submit-button"" /> *",data-testid,"data
+testid
+testid-data
+id"
+react advanced,Unit tests should be ?,Small and maintainable tests that test one thing well,Tests that test lots of functionality in one go
+react advanced,How would you simulate clicking on an element stored in a variable called myButton using fireEvent? *,fireEvent.click(myButton),"click(myButton)
+myButton.fireEvent(click)
+fireEvent(myButton)"
+backend,How do we initialise a Node module?,npm init,"node start
+git init
+npm start"
+backend,What is created for us when we initialise a Node module?,A package.json file,"A git folder
+A link to npm
+A node file"
+backend,What is the package.json for?,"It holds all the information about a Node module, including a list of dependencies","It has all of the error logs so that it is easy to debug
+It contains all the logic in a Node application"
+backend,How do we run a file called index.js with Node?,Type node index.js into the command line,"Open index.js with the browser
+Type start index.js into the command line"
+backend,How do we export something (X) as the default export of a file?,export default X,"export please X
+export now X"
+database,What does npx do?,"It will download and run a package temporarily without adding it to package.json,","It's an abbreviation to install the express module,
+It installs a random npm module,
+Stands for ""Not Package eXpress"" and will remove express from an npm project."
+database,How do you run a custom script from a package.json?,npm run scriptName,"node run scriptName, npm scriptName, node scriptName"
+database,What is a 'pool' in the pg module?,The active connection to the database,"The way we import npm packages,
+A big communal bath,
+The database"
+database,Why do we use prepared statements via parameterized queries when sending SQL queries in our Node servers to our database?,So queries can be sanitised to avoid SQL injection attacks,"So that our statements can be more modular and we can use variables,
+So that it's in the correct format for a cloud database like Heroku Postgres to accept,
+Convention to make the code more readable,"
+database,What is the 12 Factor App?,"Process, philosophy, and 'rules' to follow when structuring and architecting an app","12 key environment variables to include for security in your app,
+12 different ways to run CRUD actions when responding to requests in an Express server,
+Reminder to ensure that your version of Node is v12 or later,
+Always do at least 12 squats before your day of coding,"
+database,Why do we need to be specific about versions with dependencies in our software?,"Different versions of dependencies may not work in the same way, so we need to specify the version that works with our software","NPM is a risky way to add dependencies,
+We should avoid using dependencies wherever possible,
+Different versions of dependencies may not work in the same way, so we need to specify the version that works with our software,
+We have to know the version of our dependencies in order to add their node_modules to .gitignore,"
+React_basics,Which of these is a correct example of an ES6 module import you'd use when importing a component called ComponentName?,"import ComponentName from ""./ComponentName""","import module ComponentName,
+module.import ComponentName,
+import default ""./ComponentName"","
+React_basics,What do we type into the terminal to create a new React app called demo?,npx create-react-app demo,"npm create-react-app demo,
+npm i demo --create-react-app,
+npm start react --demo,"
+React_basics,What command do you use in the terminal to start a React app that has been initialised with create-react-app?,npm run,"npm i react,
+npm start,
+npx create-react-app"
+React_basics,Fill in the blank: A ____ component manages its own state.,Smart,"Handy,
+Advanced,
+Primitive,
+Dumb,"
+React_basics,Which of these is valid syntax to create a state that starts as an empty string?,"const [state, setState] = useState("""")","const {state, setState} = useState(""""),
+const [state, setState] = useState """",
+const [state setState] = useState("""")"
+React_basics,Which of these is a correct ES6 module export you would use when exporting a component as a default export at the bottom of its file?,export default ComponentName,"export default {ComponentName},
+module.exports = ComponentName,
+export ComponentName
+"
+React_basics,What do we mean when we say to be immutable when we're working with arrays and objects?,"Instead of changing the original array or object, making a shallow copy with any changes to the object or array's contents (via spreading/slicing)","Changing the original copy of the object or array to ensure consistency across the application,
+Making sure to update every array and object in your code at once
+Making sure not to mutate the array or object into either one of the X-Men or a Teenage Mutant Ninja Turtle,"
+React_basics,How would you use the spread operator to spread the contents of an array called pets into a new array called newPets?,const newPets = [...pets],"const newPets = ...pets
+const newPets = [pets]
+const newPets = pets"
+React_basics,How would you slice an array called pets so that your slice contains the first three items in the array?,"pets.slice(0,2)","pets.slice(3),
+pets.slice(1,3),
+pets.slice(0, 3),
+pets.slice(pets[2])"
+backend,What do req and res stand for in our Express handlers? ,Request and response,"Requirements and response,
+Request and result,
+Require and result,
+Request and respectTheCode,"
+backend,How do you install Express in your Node project?,npm i express,"node express,
+package.json.push('express'),
+npm start express"
+backend,"If you define your path with a placeholder, e.g. ""/:thing"", Express helps by recognising this and putting the value and key into which object of the req?",params,"response,
+request,
+searchTerm"
+backend,What does res.json() do in Express?,Stringifies what's passed to it and sends it as a JSON,"Parses whatever JSON is passed to it,
+Checks if the request is correctly formatted as a JSON,
+Parses what's passed to it and sends it as a normal object,
+Summons JSON Statham to fix your code"
