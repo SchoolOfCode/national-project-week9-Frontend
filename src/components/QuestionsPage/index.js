@@ -44,7 +44,7 @@ export default function QuestionsPage() {
             index
           ) => (
             <div className="QuestionBox" key={id}>
-              <p>{question}</p>
+              <h4>{question}</h4>
               <label key={nanoid()}>
                 <input
                   type="radio"
@@ -52,11 +52,12 @@ export default function QuestionsPage() {
                   name={question}
                 />
                 {correct_answer}
-              </label>
+              </label><br></br>
               {incorrect_answers.map((ans) => (
                 <label key={nanoid()}>
                   <input type="radio" value={ans} name={question} />
                   {ans}
+                  <br></br>
                 </label>
               ))}
             </div>

@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+h1 {
+  color: #03045E
+}
 .topic-section {
   display: flex;
   flex-direction: row;
@@ -9,18 +12,49 @@
   max-width: 1100px;
   margin: 0 auto;
   justify-content: center;
-  gap: 25px;
+  gap: 50px;
 }
 
 .topic {
   margin: 10px;
-  border: 1px black solid;
   border-radius: 5px;
   width: 230px;
   height: 230px;
   color: rgb(0, 0, 0);
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 #CAF0F8;
+}
+
+/* should the text colour be one the shades of blue */
+/* perhaps the box shadow to a lighter blue */
+
+.question_Section{
+display: flex;
+max-width: 600px;
+margin: auto;
+text-align: justify;
+flex-wrap: wrap;
+line-height: 1.8;
+}
+
+.QuestionBox{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 15px;
+}
+
+button[type="submit"] {
+background: none;
+border: none;
+font-size: 1.3rem;
+padding: 20px 0;
+cursor: pointer;
+color: #03045E;
+}
+
+h4 {
+  margin-bottom: .7rem;
+  margin-top: 1.5rem;
+  color: #0096c7;
 }
 

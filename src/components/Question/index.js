@@ -18,3 +18,5 @@ export default function Question({ question }) {
         </div>
     )
 }
+
+// when the input is inside a label - no need for htmlfor and id as it is explicit
