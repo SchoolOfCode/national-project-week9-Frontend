@@ -1,7 +1,7 @@
 import React from 'react'
 import Topic from "../Topic";
 
-export default function TopicSection() {
+export default function TopicPage() {
     return (
         <div className='topic-section'>
             <Topic title="Week 2 - Javascript"></Topic>

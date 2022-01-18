@@ -2,7 +2,8 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import './App.css';
 import Header from '../Header';
-import TopicSection from "../TopicSection";
+import TopicPage from "../TopicPage";
+import QuestionsPage from "../QuestionsPage";
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
 
 
       <Routes>
-        <Route path="/" element={<TopicSection />} />
+        <Route path="/" element={<TopicPage />} />
+        <Route path="/questions" element={<QuestionsPage />} />
       </Routes>
     </div>
   );
