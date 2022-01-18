@@ -2,12 +2,16 @@ import React from 'react'
 import Topic from "../Topic";
 
 export default function TopicPage() {
+
+
+
+
     return (
         <div className='topic-section'>
             <Topic title="Week 2 - Javascript" imgPath= "https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"></Topic>
             <Topic title="Week 3 - Front End" imgPath="https://www.logolynx.com/images/logolynx/0d/0d35ef6c8d4fdaf0590228404dc6448b.png"></Topic>
             <Topic title="Week 4 - Back End" imgPath="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/745px-Postgresql_elephant.svg.png"></Topic>
-            <Topic title="Week 5 - Databases" imgPath="https://banner2.cleanpng.com/20190421/ljf/kisspng-database-server-computer-icons-clip-art-flat-file-web-2-blue-2-accept-database-icon-free-web-2-blu-5cbd2898cc2b58.2547925815559005688363.jpg"></Topic>
+            <Topic title="Week 5 - Databases" imgPath="https://img.favpng.com/17/21/20/oracle-database-computer-icons-logo-png-favpng-VEiH1zgmXyWQgUD7ypdEe4Y9f.jpg"></Topic>
             <Topic title="Week 6 - Testing" imgPath="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png"></Topic>
             <Topic title="Week 7 - React Basics" imgPath="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"></Topic>
             <Topic title="Week 8 - React Advanced" imgPath="https://simg.nicepng.com/png/small/826-8263562_the-react-logo-react-js-logo-svg.png"></Topic>
