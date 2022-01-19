@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Topic from "../Topic";
-import Question from "../Question";
 import { useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
-import mockData from "../../lib";
 
 export default function QuestionsPage() {
   const [data, setData] = useState("");
