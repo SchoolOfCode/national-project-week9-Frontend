@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 
+import { API_URL } from "../../config.js";
+
 export default function QuestionsPage() {
   const [data, setData] = useState("");
   const [result, setResult] = useState(-1);
@@ -23,7 +25,7 @@ export default function QuestionsPage() {
     async function getQuestions(topic) {
       try {
         const response = await fetch(
-          `http://localhost:5000/questions?topic=${topic}`
+          `${API_URL}/questions?topic=${topic}`
         );
         let questionData = await response.json();
         setData(questionData.payload.slice(0, 6));
