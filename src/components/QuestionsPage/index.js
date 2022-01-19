@@ -35,39 +35,54 @@ export default function QuestionsPage() {
     // collect the answers and compare to the corract answers
     // may need to make a correct ans array above.
   }
-  return data ? (
+  function shuffleArray(array) {
+    let i = array.length;
+    while (i--) {
+      const ri = Math.floor(Math.random() * i);
+      [array[i], array[ri]] = [array[ri], array[i]];
+    }
+    return array;
+  }
+
+  let answerArray = []
+  let shuffledAns = []
+  if (data) {
+    answerArray= data.map(({correct_answer, incorrect_answers}) => [
+      { answer: correct_answer, correct:true} , ...incorrect_answers.map(function(ans) {
+        return {answer:ans, correct: false}
+      }),
+    ]);  
+  shuffledAns = answerArray.map(set => shuffleArray(set))
+  console.log(shuffledAns)
+  }
+
+
+ if (shuffledAns !== [] && data) {
+   return (
     <div className="question_Section">
       <form onSubmit={handleClick} onChange={(e) => {console.log(e.target.value)}}>
         {data.map(
-          (
-            { correct_answer, incorrect_answers, question, topic, id },
-            index
-          ) => (
+          ({ question, id }, i) => (
             <div className="QuestionBox" key={id}>
-              <h4>{question}</h4>
+              <h4>{question}</h4> 
+        {shuffledAns[i].map((obj) => (
               <label key={nanoid()}>
-                <input
-                  type="radio"
-                  value={correct_answer}
-                  name={question}
-                />
-                {correct_answer}
-              </label><br></br>
-              {incorrect_answers.map((ans) => (
-                <label key={nanoid()}>
-                  <input type="radio" value={ans} name={question} />
-                  {ans}
-                  <br></br>
-                </label>
-              ))}
-            </div>
-          )
-        )}
-
+              <input
+                type="radio"
+                value={obj.correct}
+                name={question}
+              />
+              {obj.answer}
+              <br></br></label>))}
+              </div>))}
         <button type="submit">Submit</button>
       </form>
+      
     </div>
-  ) : (
-    <></>
-  );
+  )} 
+  else {
+    return(
+      <></>
+    );
+  } 
 }
