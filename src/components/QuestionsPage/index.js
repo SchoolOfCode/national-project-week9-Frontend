@@ -7,8 +7,16 @@ import mockData from "../../lib";
 
 export default function QuestionsPage() {
   const [data, setData] = useState("");
-  const [result, setResult] = useState(null);
-  const [userChoices, setUserChoices] = useState([null, null, null, null, null, null])
+  const [result, setResult] = useState(-1);
+  const [userChoices, setUserChoices] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+  const [shuffledAns, setShuffledAns] = useState([]);
   const params = useParams();
   const topic = params.query;
   console.log(topic);
@@ -26,17 +34,15 @@ export default function QuestionsPage() {
     getQuestions(topic);
   }, [topic]);
 
-  if (data) {
-    console.log(data);
-  }
-
   function handleClick(e) {
     e.preventDefault();
-    // let userInput = document.querySelectorAll('input[value=true]:checked')
-    // setResult(console.loguserInput.length)
-    console.log(userChoices)
-    // collect the answers and compare to the corract answers
-    // may need to make a correct ans array above.
+    let count = 0;
+    for (let i = 0; i < userChoices.length; i++) {
+      if (userChoices[i] === data[i].correct_answer) {
+        count++;
+      }
+    }
+    setResult(count);
   }
   function shuffleArray(array) {
     let i = array.length;
@@ -47,49 +53,57 @@ export default function QuestionsPage() {
     return array;
   }
 
-  let answerArray = []
-  let shuffledAns = []
+  useEffect(() => {
+    if (data) {
+      let answerArray = data.map(({ correct_answer, incorrect_answers }) => [
+        { answer: correct_answer, correct: true },
+        ...incorrect_answers.map(function (ans) {
+          return { answer: ans, correct: false };
+        }),
+      ]);
+      setShuffledAns(answerArray.map((set) => shuffleArray(set)));
+    }
+  }, [data]);
   if (data) {
-    answerArray= data.map(({correct_answer, incorrect_answers}) => [
-      { answer: correct_answer, correct:true} , ...incorrect_answers.map(function(ans) {
-        return {answer:ans, correct: false}
-      }),
-    ]);  
-  shuffledAns = answerArray.map(set => shuffleArray(set))
-  console.log(shuffledAns)
+    console.log(data);
+  }
+  function handleUserChoice(e, i) {
+    setUserChoices([
+      ...userChoices.slice(0, i),
+      e,
+      ...userChoices.slice(i + 1),
+    ]);
+    console.log(userChoices);
   }
 
-
- if (shuffledAns !== [] && data) {
-   return (
-    <div className="question_Section">
-      <form onSubmit={handleClick} >
-        {data.map(
-          ({ question, id }, i) => (
+  if (shuffledAns.length > 1 && data) {
+    return (
+      <div className="question_Section">
+        <form onSubmit={handleClick}>
+          {data.map(({ question, id }, i) => (
             <div className="QuestionBox" key={id}>
-              <h4>{question}</h4> 
-        {shuffledAns[i].map((obj) => (
-              <label key={nanoid()}>
-              <input
-                type="radio"
-                value={obj.correct}
-                name={question}
-                onChange={(e) => setUserChoices([...userChoices.slice(0, i),e.target.value,...userChoices.slice(i+1)])}
-              />
-              {obj.answer}
-              <br></br></label>))}
-              </div>))}
-        <button type="submit">Submit</button>
-        {result?<div>
-          {result}
-        </div>:<></>}
-      </form>
-      
-    </div>
-  )} 
-  else {
-    return(
-      <></>
+              <h4>{question}</h4>
+              {shuffledAns[i].map((obj) => (
+                <label key={nanoid()}>
+                  <input
+                    type="radio"
+                    value={obj.correct}
+                    name={question}
+                    checked={userChoices[i] === obj.answer}
+                    onChange={() => handleUserChoice(obj.answer, i)}
+                  />
+                  {obj.answer}
+                  <br></br>
+                </label>
+              ))}
+            </div>
+          ))}
+          <button type="submit">Submit</button>
+          {result > -1 ? <div>You scored {result} out of 6.</div> : <></>}
+        </form>
+      </div>
     );
-  } 
+  } else {
+    return <></>;
+  }
 }
