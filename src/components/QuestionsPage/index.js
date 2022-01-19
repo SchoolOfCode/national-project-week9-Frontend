@@ -7,7 +7,8 @@ import mockData from "../../lib";
 
 export default function QuestionsPage() {
   const [data, setData] = useState("");
-  //const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null);
+  const [userChoices, setUserChoices] = useState([null, null, null, null, null, null])
   const params = useParams();
   const topic = params.query;
   console.log(topic);
@@ -28,11 +29,12 @@ export default function QuestionsPage() {
   if (data) {
     console.log(data);
   }
-let result= null
+
   function handleClick(e) {
     e.preventDefault();
-    let userInput = document.querySelectorAll('input[value=true]:checked')
-    result = (userInput.length)
+    // let userInput = document.querySelectorAll('input[value=true]:checked')
+    // setResult(console.loguserInput.length)
+    console.log(userChoices)
     // collect the answers and compare to the corract answers
     // may need to make a correct ans array above.
   }
@@ -61,7 +63,7 @@ let result= null
  if (shuffledAns !== [] && data) {
    return (
     <div className="question_Section">
-      <form onSubmit={handleClick} onChange={(e) => console.log(e.target.value)}>
+      <form onSubmit={handleClick} >
         {data.map(
           ({ question, id }, i) => (
             <div className="QuestionBox" key={id}>
@@ -72,6 +74,7 @@ let result= null
                 type="radio"
                 value={obj.correct}
                 name={question}
+                onChange={(e) => setUserChoices([...userChoices.slice(0, i),e.target.value,...userChoices.slice(i+1)])}
               />
               {obj.answer}
               <br></br></label>))}
