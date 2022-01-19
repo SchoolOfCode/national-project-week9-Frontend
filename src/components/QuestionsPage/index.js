@@ -25,7 +25,9 @@ export default function QuestionsPage() {
     async function getQuestions(topic) {
       try {
         const response = await fetch(
-          `${API_URL}/questions?topic=${topic}`
+          `${API_URL}/questions?topic=${topic}`, {
+            mode: 'no-cors',
+          }
         );
         let questionData = await response.json();
         setData(questionData.payload.slice(0, 6));
