@@ -7,7 +7,7 @@ import mockData from "../../lib";
 
 export default function QuestionsPage() {
   const [data, setData] = useState("");
-  const [userInput, setUserInput] = useState([]);
+  //const [result, setResult] = useState(null);
   const params = useParams();
   const topic = params.query;
   console.log(topic);
@@ -28,10 +28,11 @@ export default function QuestionsPage() {
   if (data) {
     console.log(data);
   }
-
+let result= null
   function handleClick(e) {
     e.preventDefault();
-    console.log(userInput)
+    let userInput = document.querySelectorAll('input[value=true]:checked')
+    result = (userInput.length)
     // collect the answers and compare to the corract answers
     // may need to make a correct ans array above.
   }
@@ -60,7 +61,7 @@ export default function QuestionsPage() {
  if (shuffledAns !== [] && data) {
    return (
     <div className="question_Section">
-      <form onSubmit={handleClick} onChange={(e) => {console.log(e.target.value)}}>
+      <form onSubmit={handleClick} onChange={(e) => console.log(e.target.value)}>
         {data.map(
           ({ question, id }, i) => (
             <div className="QuestionBox" key={id}>
@@ -76,6 +77,9 @@ export default function QuestionsPage() {
               <br></br></label>))}
               </div>))}
         <button type="submit">Submit</button>
+        {result?<div>
+          {result}
+        </div>:<></>}
       </form>
       
     </div>
