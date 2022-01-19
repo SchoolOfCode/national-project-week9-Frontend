@@ -17,6 +17,7 @@ export default function QuestionsPage() {
     null,
   ]);
   const [shuffledAns, setShuffledAns] = useState([]);
+  // const [colorChange, setColorChange] = useState("black");
   const params = useParams();
   const topic = params.query;
   console.log(topic);
@@ -39,6 +40,7 @@ export default function QuestionsPage() {
     let count = 0;
     for (let i = 0; i < userChoices.length; i++) {
       if (userChoices[i] === data[i].correct_answer) {
+        // setColorChange("green");
         count++;
       }
     }
@@ -99,7 +101,13 @@ export default function QuestionsPage() {
             </div>
           ))}
           <button type="submit">Submit</button>
-          {result > -1 ? <div>You scored {result} out of 6.</div> : <></>}
+          {result > -1 ? (
+            <h4 style={{ color: result > 4 ? "green" : "red" }}>
+              You scored {result} out of 6.
+            </h4>
+          ) : (
+            <></>
+          )}
         </form>
       </div>
     );
