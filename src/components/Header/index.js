@@ -11,6 +11,7 @@ export default function Header() {
       <h1 onClick={handleClick} className="title">
         School of Quizzes
       </h1>
+      {/* <button></button> */}
     </div>
   );
 }
