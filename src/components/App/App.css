@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+
 .App {
   text-align: center;
+  font-family: "Cabin", sans-serif;
 }
 
 .title {
   color: #05065a;
   cursor: pointer;
   margin: 0;
+  padding-top: 35px;
 }
 
 .title:hover {
@@ -42,38 +46,45 @@
   color: rgb(0, 0, 0);
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 #CAF0F8;
+  box-shadow: 0 4px 8px 0 #caf0f8;
 }
 
 /* should the text colour be one the shades of blue */
 /* perhaps the box shadow to a lighter blue */
 
-.question_Section{
-display: flex;
-max-width: 600px;
-margin: auto;
-text-align: justify;
-flex-wrap: wrap;
-line-height: 1.8;
+.question_Section {
+  display: flex;
+  max-width: 600px;
+  margin: auto;
+  text-align: justify;
+  flex-wrap: wrap;
+  line-height: 1.8;
 }
 
-.QuestionBox{
+.QuestionBox {
   border-bottom: 1px solid lightgray;
   padding-bottom: 15px;
 }
 
 button[type="submit"] {
-background: none;
-border: none;
-font-size: 1.3rem;
-padding: 20px 0;
-cursor: pointer;
-color: #03045E;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  padding: 20px 0;
+  cursor: pointer;
+  color: #03045e;
 }
 
 h4 {
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
   margin-top: 1.5rem;
   color: #0096c7;
 }
 
+#Week2-Javascript,
+#Week9-Agile,
+#Week10-ComputerScience,
+#Week11-Architecture {
+  pointer-events: none;
+  opacity: 0.5;
+}

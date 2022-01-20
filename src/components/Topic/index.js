@@ -1,17 +1,25 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Topic({ title, imgPath, query }) {
+export default function Topic({ title, imgPath, query, click }) {
+  let navigate = useNavigate();
+  const handleClick = useCallback(
+    (query) => navigate(`../questions/${query}`),
+    [navigate]
+  );
 
-    let navigate = useNavigate();
-    const handleClick = useCallback(
-      (query) => navigate(`../questions/${query}`),
-      [navigate])
+  function removespace(string) {
+    return string.replace(/\s+/g, "");
+  }
 
   return (
     <div>
       <h3 className="week-names">{title}</h3>
-      <div onClick={() =>{handleClick(query)}}
+      <div
+        id={removespace(title)}
+        onClick={() => {
+          handleClick(query);
+        }}
         className="topic"
         style={{
           backgroundImage: `url(${imgPath})`,
