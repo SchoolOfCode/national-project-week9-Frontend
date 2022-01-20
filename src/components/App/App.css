@@ -5,10 +5,19 @@
 .title {
   color: #05065a;
   cursor: pointer;
+  margin: 0;
 }
 
 .title:hover {
   text-decoration: underline;
+}
+
+.header {
+  background-color: lightblue;
+  border: black;
+  height: 120px;
+  width: 100%;
+  margin-top: 0px;
 }
 
 .topic-section {
