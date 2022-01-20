@@ -19,7 +19,7 @@ export default function QuestionsPage() {
   // const [colorChange, setColorChange] = useState("black");
   const params = useParams();
   const topic = params.query;
-  console.log(topic);
+  // console.log(topic);
 
   useEffect(() => {
     async function getQuestions(topic) {
