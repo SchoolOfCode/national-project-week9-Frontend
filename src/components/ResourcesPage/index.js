@@ -1,38 +1,36 @@
+import { useEffect, useState } from "react";
+
 import ResourceTopic from "../ResourceTopic";
+import { API_URL } from "../../config";
 
 export default function ResourcesPage() {
+
+    const [resourcesData, setResourcesData] = useState("");
+    console.log("resourcesData", resourcesData)
+
+    useEffect(() => {
+        async function getResources() {
+          try {
+            const response = await fetch(`${API_URL}/resources`);
+            let receivedData = await response.json();
+            console.log(receivedData)
+            setResourcesData(receivedData.payload);
+            // setData(questionData.payload.slice(0, 6));
+          } catch (error) {}
+        }
+        getResources();
+      }, []);
+
+
+      if(resourcesData) {
     return (
       <div className="resouces-section">
         <h1>Resource Page</h1>
-        <ResourceTopic
-        title=" Week 2 - Javascript"
-        imgPath="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"
-      ></ResourceTopic>
-      <ResourceTopic></ResourceTopic>
-      <ResourceTopic></ResourceTopic>
-      <ResourceTopic></ResourceTopic>
-
-      {/* <Topic
-        query="backend"
-        title="Week 4 - Back End"
-        imgPath="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/745px-Postgresql_elephant.svg.png"
-      ></Topic>
-      <Topic
-        query="database"
-        title="Week 5 - Databases"
-        imgPath="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTER_wnWHgS2z0Kra1UyKRv-ez3DGqTOP4nzSDq-sYmEkF2m5-Gayi8NNFdATDeVLYYEQI&usqp=CAU"
-      ></Topic>
-      <Topic
-        query="testing"
-        title="Week 6 - Testing"
-        imgPath="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png"
-      ></Topic>
-      <Topic
-        query="react_basics"
-        title="Week 7 - React Basics"
-        imgPath="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-      ></Topic> */}
+        <ResourceTopic title="Javascript" imgSrc="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png" data={resourcesData.filter((obj) => obj.topic === "javascript")} ></ResourceTopic>
       </div>
     );
+      } else {
+         return(<></>)
+      }
   }
   
