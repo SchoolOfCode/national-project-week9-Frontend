@@ -2,9 +2,15 @@
   text-align: center;
 }
 
-h1 {
-  color: #05065a
+.title {
+  color: #05065a;
+  cursor: pointer;
 }
+
+.title:hover {
+  text-decoration: underline;
+}
+
 .topic-section {
   display: flex;
   flex-direction: row;
@@ -13,6 +19,10 @@ h1 {
   margin: 0 auto;
   justify-content: center;
   gap: 50px;
+}
+
+.week-names {
+  color: rgb(57, 89, 196);
 }
 
 .topic {

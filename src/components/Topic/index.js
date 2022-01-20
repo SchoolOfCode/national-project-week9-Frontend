@@ -10,7 +10,7 @@ export default function Topic({ title, imgPath, query }) {
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3 className="week-names">{title}</h3>
       <div onClick={() =>{handleClick(query)}}
         className="topic"
         style={{

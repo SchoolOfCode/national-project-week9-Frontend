@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
-    return (
-        <div>
-            <h1>School of Quizzes</h1>
-        </div>
-    )
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(`./`);
+  }
+  return (
+    <div>
+      <h1 onClick={handleClick} className="title">
+        School of Quizzes
+      </h1>
+    </div>
+  );
 }
