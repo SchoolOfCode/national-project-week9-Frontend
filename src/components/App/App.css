@@ -17,7 +17,7 @@
 }
 
 .header {
-  background-color: lightblue;
+  background-color: #caf0f8;
   border: black;
   height: 120px;
   width: 100%;
@@ -70,9 +70,14 @@ button[type="submit"] {
   background: none;
   border: none;
   font-size: 1.3rem;
-  padding: 20px 0;
   cursor: pointer;
   color: #03045e;
+  padding: 20px 18px;
+}
+
+button[type="submit"]:hover {
+  background: #caf0f8;
+  color: black;
 }
 
 h4 {
@@ -87,4 +92,9 @@ h4 {
 #Week11-Architecture {
   pointer-events: none;
   opacity: 0.5;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
 }

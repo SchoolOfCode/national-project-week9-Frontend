@@ -16,7 +16,7 @@ export default function QuestionsPage() {
     null,
   ]);
   const [shuffledAns, setShuffledAns] = useState([]);
-  // const [colorChange, setColorChange] = useState("black");
+  const [colorChange, setColorChange] = useState("");
   const params = useParams();
   const topic = params.query;
   // console.log(topic);
@@ -24,9 +24,7 @@ export default function QuestionsPage() {
   useEffect(() => {
     async function getQuestions(topic) {
       try {
-        const response = await fetch(
-          `${API_URL}/questions?topic=${topic}`
-        );
+        const response = await fetch(`${API_URL}/questions?topic=${topic}`);
         let questionData = await response.json();
         setData(questionData.payload.slice(0, 6));
       } catch (error) {}
@@ -39,7 +37,7 @@ export default function QuestionsPage() {
     let count = 0;
     for (let i = 0; i < userChoices.length; i++) {
       if (userChoices[i] === data[i].correct_answer) {
-        // setColorChange("green");
+        setColorChange("green");
         count++;
       }
     }
@@ -85,13 +83,23 @@ export default function QuestionsPage() {
             <div className="QuestionBox" key={id}>
               <h4>{question}</h4>
               {shuffledAns[i].map((obj) => (
-                <label key={nanoid()}>
+                <label
+                  key={nanoid()}
+                  style={{
+                    textDecoration:
+                      obj.correct && colorChange !== ""
+                        ? `underline ${colorChange}`
+                        : "none",
+                    color: obj.correct ? colorChange : "",
+                  }}
+                >
                   <input
                     type="radio"
                     value={obj.correct}
                     name={question}
                     checked={userChoices[i] === obj.answer}
                     onChange={() => handleUserChoice(obj.answer, i)}
+                    required
                   />
                   {obj.answer}
                   <br></br>
@@ -99,14 +107,16 @@ export default function QuestionsPage() {
               ))}
             </div>
           ))}
-          <button type="submit">Submit</button>
-          {result > -1 ? (
-            <h4 style={{ color: result > 4 ? "green" : "red" }}>
-              You scored {result} out of 6.
-            </h4>
-          ) : (
-            <></>
-          )}
+          <div className="feedback">
+            <button type="submit">Submit</button>
+            {result > -1 ? (
+              <h3 style={{ color: result > 4 ? "green" : "dangerred" }}>
+                You scored {result} out of 6.
+              </h3>
+            ) : (
+              <></>
+            )}
+          </div>
         </form>
       </div>
     );
