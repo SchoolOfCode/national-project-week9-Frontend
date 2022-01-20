@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 
-import { API_URL } from "../../config.js";
+import { API_URL } from "../../config/index.js";
 
 export default function QuestionsPage() {
   const [data, setData] = useState("");
