@@ -1,7 +1,5 @@
 import ResourceTopic from "../ResourceTopic";
 
-
-
 export default function ResourcesPage() {
     return (
       <div className="resouces-section">
