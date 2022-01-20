@@ -6,6 +6,7 @@ export default function TopicPage() {
     <div className="topic-section">
       <Topic
         title=" Week 2 - Javascript"
+        query="javascript"
         imgPath="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"
       ></Topic>
       <Topic
