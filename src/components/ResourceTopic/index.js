@@ -17,7 +17,7 @@ export default function ResourceTopic({ title, imgSrc, data }) {
 
       {data.map((obj) => {
         return (
-          <div>
+          <div key={obj.id}>
             <a href={obj.url} target="_blank" rel="noreferrer">
               {obj.title}
             </a>

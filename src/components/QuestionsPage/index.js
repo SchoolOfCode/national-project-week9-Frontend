@@ -19,7 +19,6 @@ export default function QuestionsPage() {
   const [colorChange, setColorChange] = useState("");
   const params = useParams();
   const topic = params.query;
-  // console.log(topic);
 
   useEffect(() => {
     async function getQuestions(topic) {
@@ -63,16 +62,13 @@ export default function QuestionsPage() {
       setShuffledAns(answerArray.map((set) => shuffleArray(set)));
     }
   }, [data]);
-  if (data) {
-    console.log(data);
-  }
+  
   function handleUserChoice(e, i) {
     setUserChoices([
       ...userChoices.slice(0, i),
       e,
       ...userChoices.slice(i + 1),
     ]);
-    console.log(userChoices);
   }
 
   if (shuffledAns.length > 1 && data) {

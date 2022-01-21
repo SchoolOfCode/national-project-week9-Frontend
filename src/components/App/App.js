@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "../Header";
 import TopicPage from "../TopicPage";
 import QuestionsPage from "../QuestionsPage";
-import ResourcesPage from "../ResourcesPage"
+import ResourcesPage from "../ResourcesPage";
 
 function App() {
   return (
