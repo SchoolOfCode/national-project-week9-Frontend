@@ -3,9 +3,8 @@ import React from "react";
 export default function ResourceTopic({ title, imgSrc, data }) {
   return (
     <div>
-      <h2>{title}</h2>
       <div
-        className="topic"
+        className="resource-topic"
         style={{
           backgroundImage: `url(${imgSrc})`,
           backgroundPosition: "center",
@@ -13,12 +12,19 @@ export default function ResourceTopic({ title, imgSrc, data }) {
           backgroundRepeat: "no-repeat",
           border: "none",
         }}
-      >
-        {data.map((obj) => {
-            return (<div><a href={obj.url} target="_blank" rel="noreferrer">{obj.title}</a><br></br></div>)
-        })}
-      </div>
-      
+      ></div>
+      <h2 className="resource-title">{title}</h2>
+
+      {data.map((obj) => {
+        return (
+          <div>
+            <a href={obj.url} target="_blank" rel="noreferrer">
+              {obj.title}
+            </a>
+            <br></br>
+          </div>
+        );
+      })}
     </div>
   );
 }

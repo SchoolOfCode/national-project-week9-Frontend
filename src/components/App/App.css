@@ -19,9 +19,20 @@
 .header {
   background-color: #caf0f8;
   border: black;
-  height: 120px;
+  height: 140px;
   width: 100%;
   margin-top: 0px;
+}
+
+.resources-button {
+  color: rgb(57, 89, 196);
+  text-align: right;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.resources-button:hover {
+  text-decoration: underline;
 }
 
 .topic-section {
@@ -47,6 +58,45 @@
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 #caf0f8;
+}
+
+.resource-topic {
+  margin: 10px;
+  border-radius: 5px;
+  width: 230px;
+  height: 230px;
+  /* color: rgb(0, 0, 0); */
+  font-size: 20px;
+  /* cursor: pointer; */
+  box-shadow: 0 4px 8px 0 #caf0f8;
+  opacity: 1;
+}
+
+
+/* .resource-topic::before {
+  content: "";
+       background-image: url('https://placekitten.com/1200/800'); 
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.5;
+} */
+
+.resource-title {
+  color: rgb(57, 89, 196);
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* should the text colour be one the shades of blue */

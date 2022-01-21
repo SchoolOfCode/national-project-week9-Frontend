@@ -6,12 +6,16 @@ export default function Header() {
   function handleClick() {
     navigate(`./`);
   }
+
+  function handleResourcesClick() {
+    navigate(`./resources`);
+  }
   return (
     <div className="header">
       <h1 onClick={handleClick} className="title">
         School of Quizzes
       </h1>
-      {/* <button></button> */}
+      <h2 className="resources-button" onClick={handleResourcesClick}>Extra Resources</h2>
     </div>
   );
 }

@@ -78,6 +78,7 @@ export default function QuestionsPage() {
   if (shuffledAns.length > 1 && data) {
     return (
       <div className="question_Section">
+      <h2>{topic[0].toUpperCase() + topic.slice(1)} </h2>
         <form onSubmit={handleClick}>
           {data.map(({ question, id }, i) => (
             <div className="QuestionBox" key={id}>
@@ -110,7 +111,7 @@ export default function QuestionsPage() {
           <div className="feedback">
             <button type="submit">Submit</button>
             {result > -1 ? (
-              <h3 style={{ color: result > 4 ? "green" : "dangerred" }}>
+              <h3 style={{ color: result > 4 ? "green" : "red" }}>
                 You scored {result} out of 6.
               </h3>
             ) : (
